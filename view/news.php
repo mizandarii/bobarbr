@@ -23,8 +23,16 @@ class ViewNews {
     public static function ReadNews($n) {
         echo "<h2>" . $n['title'] . "</h2>";
         Controller::CommentsCountWithAncor($n['id']);
-        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($n['picture']) . '" width="150"/><br>';
+        echo '<br>';
+        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($n['picture']) . '" width="400"/><br>';
+        echo "<p>" . $n['price'] . " <strong> eur/öö: </strong> </p>";
         echo "<p>" . $n['text'] . "</p>";
+        echo "<p><strong>Aadress: </strong> " . $n['address'] . "</p>";
+        echo "<p><strong>Linn: </strong> " . $n['city'] . "</p>";
+        echo "<p><strong>Riik: </strong> " . $n['country'] . "</p>";
+        echo "<p><strong>Suurus (m2): </strong> " . $n['size'] . "</p>";
+        echo "<p><strong>Korrus: </strong> " . $n['floor'] . "</p>";
+
     }
 
 
