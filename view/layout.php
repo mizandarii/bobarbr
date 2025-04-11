@@ -10,7 +10,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MS+dh/1fQ784/iJTQUOhcWr7x9JvoRxT2MZwit"
     crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
 </head>
 <body>
