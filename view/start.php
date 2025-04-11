@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 ob_start();
 ?>
@@ -10,4 +11,18 @@ $content = ob_get_clean();
 
 include_once 'view/layout.php';
 
+=======
+<?php
+ob_start();
+?>
+<h1>TOP 3 RENTALS</h1>
+<br>
+<?php
+ViewNews::NewsByCategory($arr);
+
+$content = ob_get_clean();
+
+include_once 'view/layout.php';
+
+>>>>>>> 2668641d4a3fcce24fb699128d4709ca82e17a9e
 ?>
