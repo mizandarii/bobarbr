@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1> Uudised(kategorii)</h1>
+<h1> Objektid(kategorii)</h1>
 <br>
 
 <?php

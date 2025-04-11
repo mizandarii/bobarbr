@@ -17,7 +17,8 @@ class Controller {
     }
 
     public static function NewsByCatID($id) {
-        $arr = News::getNewsByCategoryID($id);  // Исправлено на News
+        $arr = News::getNewsByCategoryID($id);  // Исправлено
+        //$catName = News::getCategoryNameByID($id);
         include_once 'view/catnews.php';
     }
 

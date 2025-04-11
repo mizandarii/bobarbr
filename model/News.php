@@ -15,11 +15,18 @@ class News{
     }
 
     public static function getNewsByCategoryID($id){
-        $query = "SELECT * from rentals where category_id = ".(string)$id." order by id desc";
+        $query = "SELECT * from rentals where id = ".(string)$id." order by id desc";
         $db = new Database();
         $arr = $db -> getAll($query);
         return $arr;
     }
+
+    // public static function getCategoryNameByID($id){
+    //     $query = "SELECT name from category where category_id = ".(string)$id." order by id desc";
+    //     $db = new Database();
+    //     $catName = $db -> getOne($query);
+    //     return $catName;
+    // }
 
     public static function getNewsByID($id){
         $query = "SELECT * from rentals where id = ".(string)$id;
