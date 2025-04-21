@@ -2,7 +2,7 @@
 
 <div class="container" style="min-height:400px;">
 <div class="col-md-11">
-    <h2>News Add</h2>
+    <h2>Rental Add</h2>
 
     <?php
     if(isset($test)){
@@ -10,7 +10,7 @@
 
             ?>
             <div class="alert alert-info">
-                <strong>Запись добавлена.</strong><a href="newsAdmin">Список новостей</a>
+                <strong>Запись добавлена.</strong><a href="newsAdmin">Список объектов</a>
             </div>
             <?php
         }
@@ -18,7 +18,7 @@
         {
             ?>
             <div class="alert alert-warning">
-                <strong>Ошибка добавления записи!</strong><a href="newsAdmin">Список новостей</a>
+                <strong>Ошибка добавления записи!</strong><a href="newsAdmin">Список объектов</a>
             </div>
             <?php
         }
@@ -28,11 +28,11 @@
         <form method="POST" action="newsAddResult" enctype="multipart/form-data">
             <table class="table table-bordered">
             <tr>
-                <td>News title</td>
+                <td>Rental title</td>
                 <td><input type="text" name="title" class="form-control" required></td>
             </tr>
             <tr>
-                <td>News text</td>
+                <td>Rental text</td>
                 <td><textarea rows="5" name="text" class="form-control" required></textarea></td>
             </tr>
             <tr>
@@ -54,6 +54,32 @@
                     <input type=file name="picture" style="color.black;">
                 </div></td>
             </tr>
+
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="title" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><input type="text" name="title" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="title" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="text" name="title" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td><input type="text" name="title" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Floor</td>
+                <td><input type="text" name="title" class="form-control" required></td>
+            </tr>
+            
 
             <tr>
                 <td colspan="2">
