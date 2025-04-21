@@ -11,7 +11,7 @@ class database {
         $this->host = 'localhost';
         $this->user = 'root';
         $this->password = '';
-        $this->basename = 'airbnb';
+        $this->basename = 'bobarbr';
         $this->connect();
     }
 

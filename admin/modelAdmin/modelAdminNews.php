@@ -44,6 +44,14 @@ class modelAdminNews{
             if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])){
                 $title=$_POST['title'];
                 $text=$_POST['text'];
+
+                $address=$_POST['address'];
+                $city=$_POST['city'];
+                $country=$_POST['country'];
+                $price=$_POST['price'];
+                $floor=$_POST['floor'];
+                $size=$_POST['size'];
+
                 $category_id=$_POST['idCategory'];
 
                 $image=$_FILES['picture']['name'];

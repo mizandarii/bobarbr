@@ -57,27 +57,27 @@
 
             <tr>
                 <td>Address</td>
-                <td><input type="text" name="title" class="form-control" required></td>
+                <td><input type="text" name="address" class="form-control" required></td>
             </tr>
             <tr>
                 <td>Country</td>
-                <td><input type="text" name="title" class="form-control" required></td>
+                <td><input type="text" name="country" class="form-control" required></td>
             </tr>
             <tr>
                 <td>City</td>
-                <td><input type="text" name="title" class="form-control" required></td>
+                <td><input type="text" name="city" class="form-control" required></td>
             </tr>
             <tr>
                 <td>Price</td>
-                <td><input type="text" name="title" class="form-control" required></td>
+                <td><input type="text" name="price" class="form-control" required></td>
             </tr>
             <tr>
                 <td>Size</td>
-                <td><input type="text" name="title" class="form-control" required></td>
+                <td><input type="text" name="size" class="form-control" required></td>
             </tr>
             <tr>
                 <td>Floor</td>
-                <td><input type="text" name="title" class="form-control" required></td>
+                <td><input type="text" name="floor" class="form-control" required></td>
             </tr>
             
 
