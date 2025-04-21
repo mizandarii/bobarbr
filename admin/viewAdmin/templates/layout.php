@@ -34,9 +34,9 @@
         if (isset($_SESSION["status"]) && $_SESSION["status"]=="admin"){
             echo '<h4?><a href="../" target= blank>WEBSITE</a>';
             echo ' &#187 <a href="./">Start admin</a>';
-            echo ' &#187 <a href="categoryAdmin">News Categories</a>';
+            echo ' &#187 <a href="categoryAdmin">Rental Categories</a>';
             
-            echo ' &#187 <a href="newsAdmin">NewsList</a>';
+            echo ' &#187 <a href="newsAdmin">Rental List</a>';
 
             echo ' </h4>';
         }else{
