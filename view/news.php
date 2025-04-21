@@ -3,7 +3,7 @@ class ViewNews {
     // Метод для отображения новостей по категориям
     public static function NewsByCategory($arr) {
         foreach ($arr as $value) {
-            echo '<img src="data:image/jpeg;base64,' . base64_encode($value['picture']) . '" width="150"/><br>';
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($value['picture']) . '" width="400"/><br>';
             echo "<h2>" . $value['title'] . "</h2>";
             Controller::CommentsCount($value['id']);
             echo "<a href='news?id=" . $value['id'] . "'>Edasi</a><br>";

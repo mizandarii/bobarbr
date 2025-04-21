@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 class controllerAdminNews{
     public static function NewsList(){
@@ -38,45 +37,4 @@ class controllerAdminNews{
         include_once('viewAdmin/newsDeleteForm.php');
     }
 }
-=======
-<?php
-class controllerAdminNews{
-    public static function NewsList(){
-        $arr=modelAdminNews::getNewsList();
-        include_once 'viewAdmin/newsList.php';
-    }
-
-    public static function newsAddForm(){
-        $arr = modelAdminCategory::getCategoryList();
-        include_once('viewAdmin/newsAddForm.php');
-    }
-
-    public static function newsAddResult(){
-        $test = modelAdminNews::getNewsAdd();
-        include_once('viewAdmin/newsAddForm.php');
-    }
-
-    public static function newsEditForm($id){
-        $arr = modelAdminCategory::getCategoryList();
-        $detail=modelAdminNews::getNewsDetail($id);
-        include_once('viewAdmin/newsEditForm.php');
-    }
-
-    public static function newsEditResult($id){
-        $test = modelAdminNews::getNewsEdit($id);
-        include_once('viewAdmin/newsEditForm.php');
-    }
-
-    public static function newsDeleteForm($id){
-        $arr = modelAdminCategory::getCategoryList();
-        $detail = modelAdminNews::getNewsDetail($id);
-        include_once('viewAdmin/newsDeleteForm.php');
-    }
-
-    public static function newsDeleteResult($id){
-        $test=modelAdminNews::getNewsDelete($id);
-        include_once('viewAdmin/newsDeleteForm.php');
-    }
-}
->>>>>>> 2668641d4a3fcce24fb699128d4709ca82e17a9e
 ?>

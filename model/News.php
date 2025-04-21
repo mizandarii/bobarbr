@@ -15,7 +15,7 @@ class News{
     }
 
     public static function getNewsByCategoryID($id){
-        $query = "SELECT * from rentals where id = ".(string)$id." order by id desc";
+        $query = "SELECT * from rentals where category_id = ".(string)$id." order by id desc";
         $db = new Database();
         $arr = $db -> getAll($query);
         return $arr;
