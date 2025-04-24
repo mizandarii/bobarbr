@@ -6,16 +6,24 @@ class ViewNews {
             echo '<img src="data:image/jpeg;base64,' . base64_encode($value['picture']) . '" width="400"/><br>';
             echo "<h2>" . $value['title'] . "</h2>";
             Controller::CommentsCount($value['id']);
-            echo "<a href='news?id=" . $value['id'] . "'>Edasi</a><br>";
+            echo "<br />";
+            echo "<strong>" . $value['price'] . "€/öö</strong><br />";
+            echo "<br/>";
+            echo "<a href='news?id=" . $value['id'] . "'>uuri lähemalt</a><br>";
         }
     }
 
     // Метод для отображения всех новостей
     public static function AllNews($arr) {
         foreach ($arr as $value) {  // Пропущен символ $
-            echo "<li>" . $value['title'];
+            echo  $value['title'];
             Controller::CommentsCount($value['id']);
-            echo "<a href='news?id=" . $value['id'] . "'>Edasi</a></li><br />";
+            echo "<br />";
+            echo "<strong>" . $value['price'] . "€/öö</strong><br />";
+
+            echo "<a href='news?id=" . $value['id'] . "'>uuri lähemalt</a>";
+            echo "</li><br />";
+            
         }
     }
 

@@ -88,7 +88,7 @@
 
                     <tr>
                         <td>Price</td>
-                        <td><input type="text" name="type" class="form-control" required 
+                        <td><input type="text" name="price" class="form-control" required 
                                    value="<?php echo $detail['price']; ?>"></td>
                     </tr>
 

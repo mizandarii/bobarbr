@@ -15,9 +15,16 @@ class modelAdminNews{
                 $title=$_POST['title'];
                 $text=$_POST['text'];
                 $idCategory=$_POST['idCategory'];
+                $address=$_POST['address'];
+                $city=$_POST['city'];
+                $country=$_POST['country'];
+                $price=$_POST['price'];
+                $floor=$_POST['floor'];
+                $size=$_POST['size'];
+
 
                 $image = addslashes(file_get_contents($_FILES['picture']['tmp_name']));
-                $sql="INSERT into `rentals` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`) values (null, '$title', '$text', '$image', '$idCategory', '1')";
+                $sql="INSERT into `rentals` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`, `address`, `city`, `country`, `price`, `floor`, `size`) values (null, '$title', '$text', '$image', '$idCategory', '1', '$address', '$city', '$country', '$price', '$floor', '$size' )";
                 $db = new Database();
                 $item = $db->executeRun($sql);
                 if($item==true){
@@ -59,11 +66,14 @@ class modelAdminNews{
                     $image=addslashes(file_get_contents($_FILES['picture']['tmp_name']));
                 }
                 if($image==''){
-                    $sql="update `rentals` set `title` = '$title', `text` = '$text', `picture` = '$image', `category_id`='$category_id' where `rentals`.`id` =".$id;
+                    $sql="update `rentals` set `title` = '$title', `text` = '$text', `picture` = '$image', `category_id`='$category_id', `address`='$address', `city`='$city', `country`='$country', `price`='$price', `floor`='$floor', `size`='$size'
+                     where `rentals`.`id` =".$id;
                 }
                 else{
                     $sql = "update `rentals` set `title` = '$title', `text` = '$text', 
-                    `picture` = '$image', `category_id`='$category_id' where `rentals`.`id`=".$id;
+                    `picture` = '$image', `category_id`='$category_id' ,
+                    `address`='$address', `city`='$city', `country`='$country', `price`='$price', `floor`='$floor', `size`='$size'
+                    where `rentals`.`id`=".$id;
                 }
                 $db = new Database();
                 $item=$db->executeRun($sql);
