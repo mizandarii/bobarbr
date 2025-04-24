@@ -1,8 +1,12 @@
 <?php 
 class modelAdminNews{
     public static function getNewsList(){
-        $query = "SELECT rentals.*, category.name, users.username from rentals, category, users WHERE rentals.category_id=category.id AND rentals.user_id=users.id ORDER BY 'rentals', 'id' DESC";
-        $db = new Database();
+        $query = "SELECT rentals.*, category.name, users.username 
+        FROM rentals, category, users 
+        WHERE rentals.category_id = category.id 
+          AND rentals.user_id = users.id 
+        ORDER BY rentals.id DESC";
+      $db = new Database();
         $arr = $db->getAll($query);
         return $arr; 
     }
