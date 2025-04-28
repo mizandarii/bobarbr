@@ -15,6 +15,8 @@ class ViewComments {
             }
             echo '</table>';
         }
+
+        
     }
 
     public static function CommentsCountWithAncor($value) {

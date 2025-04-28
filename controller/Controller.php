@@ -40,6 +40,27 @@ public static function error404() {
         header('Location: news?id=' . $id . '#ctable');  // Исправлено: используем $id
     }
 
+
+
+
+    
+    public static function BookApartment() {
+        $apartmentId = $_POST['apartment_id'];
+        $startDate = $_POST['start_date'];
+        $endDate = $_POST['end_date'];
+    
+        if (Booking::AddBooking($apartmentId, $startDate, $endDate)) {
+            // Успех: перенаправляем обратно на новость с GET параметром success
+            header("Location: news?id=$apartmentId&booking_success=true");
+            exit;
+        } else {
+            echo "Tekkis viga broneeringu salvestamisel.";
+        }
+    }
+    
+
+
+
     // Комментарии
     public static function Comments($newsid) {
         $arr = Comments::getCommentByNewsID($newsid);

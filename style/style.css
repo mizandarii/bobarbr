@@ -72,7 +72,7 @@ a {
   text-align: center;
 }
 .one ul {
-  background: #4B0082;
+  background-color: #703C96;
 }
 .one ul a {
   color: rgb(255, 255, 255);
@@ -87,7 +87,7 @@ a {
 }
 .one .submenu {
   display: none;
-  background: #4B0082;
+  background-color: #703C96;
 }
 .one ul li:hover .submenu {
   display: block;
@@ -130,21 +130,22 @@ section{
     border: 0;
 }
 
-table{
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    width: auto;
-    padding: 0;
+table {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;  /* Сделаем таблицу адаптивной по ширине */
+  padding: 0;
   font-size: 1.2rem;
 }
 
-td{
-    border: 1px solid black;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
+
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word; /* Чтобы длинный текст не вылезал за ячейки */
 }
+
 
 tr{
     padding: 0;

@@ -23,6 +23,16 @@ elseif($path == 'insertcomment' and isset($_GET['comment'], $_GET['id']))
     $response = Controller::InsertComment($_GET['comment'], $_GET['id']);
 }
 
+
+
+elseif($path == 'book' and isset($_GET['user'], $_GET['object'], $_GET['start'], $_GET['end']))
+{
+    $response = Controller::InsertBooking($_GET['user'], $_GET['object'], $_GET['start'], $_GET['end']);
+}
+
+
+
+
 elseif ($path == 'registerForm'){
     //$response = Controller::registerForm();
     $controller = new Controller();
