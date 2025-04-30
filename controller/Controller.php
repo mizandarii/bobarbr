@@ -45,11 +45,12 @@ public static function error404() {
 
     
     public static function BookApartment() {
-        $apartmentId = $_POST['apartment_id'];
-        $startDate = $_POST['start_date'];
-        $endDate = $_POST['end_date'];
+        $userId = $_POST['user'];
+        $objectId = $_POST['object'];
+        $startDate = $_POST['start'];
+        $endDate = $_POST['end'];
     
-        if (Booking::AddBooking($apartmentId, $startDate, $endDate)) {
+        if (Booking::insertBooking($userId, $objetcId, $startDate, $endDate)) {
             // Успех: перенаправляем обратно на новость с GET параметром success
             header("Location: news?id=$apartmentId&booking_success=true");
             exit;

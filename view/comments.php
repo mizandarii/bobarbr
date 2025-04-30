@@ -9,11 +9,13 @@ class ViewComments {
 
     public static function CommentsByNews($arr) {
         if ($arr != null) {
+            echo '<div style="width: 33%; min-width: 300px;">';
             echo '<table id="ctable"><th>Kommentaar</th><th>Kuupäev</th>';
             foreach ($arr as $value) {
                 echo '<tr><td>'.$value['textt']."</td><td>".$value['date_added']."</td></tr>";
             }
             echo '</table>';
+            echo '</div>';
         }
 
         

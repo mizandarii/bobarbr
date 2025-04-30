@@ -161,6 +161,8 @@ public static function AllNews($arr) {
     justify-content: center;
     text-align: center;
     padding: 40px 20px;
+    position: relative;
+
 }
 
 
