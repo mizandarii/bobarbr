@@ -179,36 +179,37 @@ echo '</div>';
 
         echo '
 <div id="bookingModal" class="modal">
-  <div class="modal-content" style="max-width: 400px; margin: 50px auto;">
+  <div class="modal-content" style="width: 80% !important; margin: 50px auto;">
     <span onclick="closeModal()" class="close">&times;</span>
     <h3>Broneeri majutus</h3>
     <form id="bookingForm">
-        <input type="hidden" name="apartment_id" value="' . $n['id'] . '" />
-        <label for="start_date">Alguskuupäev:</label><br>
-        <input type="date" id="start_date" name="start_date" required><br><br>
+      <input type="hidden" name="apartment_id" value="' . $n['id'] . '" />
+      <label for="start_date">Alguskuupäev:</label><br>
+      <input type="date" id="start_date" name="start_date" required><br><br>
 
-        <label for="end_date">Lõppkuupäev:</label><br>
-        <input type="date" id="end_date" name="end_date" required><br><br>
+      <label for="end_date">Lõppkuupäev:</label><br>
+      <input type="date" id="end_date" name="end_date" required><br><br>
 
-        <button type="submit" class="submit-btn">Kinnita broneering</button>
+      <button type="submit" class="submit-btn">Kinnita broneering</button>
     </form>
   </div>
 </div>
 
+
         ';
 
         echo '
-<div id="successModal" class="modal" style="width:80%">
-    <div class="modal-content success-content"> <!-- дополнительный класс -->
-        <span onclick="closeSuccessModal()" class="close">&times;</span>
-        <div class="check">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
-                <rect width="24" height="24" fill="none" />
-                <path fill="#703C96" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd" />
-            </svg>
-        </div>
-        <h3>Broneering õnnestus</h3>
+<div id="successModal" class="modal">
+  <div class="modal-content success-content" style="max-width: 80%; margin: 50px auto;">
+    <span onclick="closeSuccessModal()" class="close">&times;</span>
+    <div class="check">
+      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="none" />
+        <path fill="#703C96" fill-rule="evenodd" d="M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18m-.232-5.36l5-6l-1.536-1.28l-4.3 5.159l-2.225-2.226l-1.414 1.414l3 3l.774.774z" clip-rule="evenodd" />
+      </svg>
     </div>
+    <h3>Broneering õnnestus</h3>
+  </div>
 </div>
 
 
