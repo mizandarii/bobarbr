@@ -5,7 +5,7 @@ body {
   }
 h2 {
   font-family: monospace;
-  color: #606060;
+  color: #ff2020;
   
 }
 
@@ -152,7 +152,8 @@ tr{
 }
 
 th{
-    background-color: #4EBE4C;
+    background-color: #503168;
+    color:white;
     padding: 20px;
     margin: 0;
     border: 1px solid black;
@@ -197,4 +198,48 @@ h1{
 
 th{
     text-align: center;
+}
+
+.topmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.topmenu li {
+    position: relative;
+}
+
+.topmenu > li > a {
+    text-decoration: none;
+    color: white;
+    background-color: #703C96;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 6px;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 180px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    z-index: 100;
+}
+
+/* Показываем submenu при наведении */
+.topmenu li:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }

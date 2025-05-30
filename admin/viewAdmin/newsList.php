@@ -20,7 +20,7 @@
                     echo '<td>'.$row['id'].'</td>';
 
                     echo '<td><b>Title:</b>'.$row['title'].'<br>';
-                    echo '<b>Category:</b><i>'.$row['category_id'].'</i>';
+                    echo '<b>Category:</b><i>'.$row['name'].'</i>';
                     echo '<br><b>Author: </b><i>'.$row['username'].'</i>';
                     echo '</td>';
                     echo '<td>

@@ -1,45 +1,66 @@
 <?php
 class ViewNews {
     // Метод для отображения новостей по категориям
-    public static function NewsByCategory($arr) {
-        foreach ($arr as $value) {
-            echo '<div style="display: flex; align-items: top; margin-bottom: 30px; padding: 15px; border-radius: 8px;">';
-        
-            // Картинка
-            echo '<div style="flex-shrink: 0;">';
-            echo '<img src="data:image/jpeg;base64,' . base64_encode($value['picture']) . '" width="400" />';
-            echo '</div>';
-            
-            // Текст справа
-            echo '<div style="margin-left: 20px;">';
-    
-            echo '<h2 style="margin: 0 0 10px 0;">';
-            echo $value['title'];
-            Controller::CommentsCount($value['id']);
-            echo '</h2>';
-    
-            echo "<p style='margin: 10px 0; font-weight: bold;'>" . htmlspecialchars($value['price']) . "€/öö</p>";
-            echo "<a href='news?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
-            echo '</div>';
-            
-            echo '</div>';
-            echo '<hr/>';
+public static function NewsByCategory($arr) {
+    echo '
+    <style>
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        padding: 15px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeSlideIn 0.5s ease forwards;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @media (min-width: 700px) {
+        .card {
+            flex-direction: row;
         }
     }
 
-// Метод для отображения всех новостей
-public static function AllNews($arr) {
-    foreach ($arr as $value) {
-        echo '<div style="display: flex; align-items: top; margin-bottom: 30px; padding: 15px; border-radius: 8px;">';
-        
-        // Картинка
-        echo '<div style="flex-shrink: 0;">';
-        echo '<img src="data:image/jpeg;base64,' . base64_encode($value['picture']) . '" width="400" />';
-        echo '</div>';
-        
-        // Текст справа
-        echo '<div style="margin-left: 20px;">';
+    .card:hover {
+        transform: translateY(0) scale(1.03);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
 
+.card-img-wrapper {
+    width: 100%;
+    max-width: 400px;
+    flex-shrink: 0;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+    @keyframes fadeSlideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+    ';
+
+    $i = 0;
+    foreach ($arr as $value) {
+        $delay = $i * 0.1;
+        echo '<div class="card" style="animation-delay: '.$delay.'s;">';
+
+        // Картинка
+echo '<div class="card-img-wrapper">';
+echo '<img src="data:image/jpeg;base64,' . base64_encode($value["picture"]) . '" />';
+echo '</div>';
+
+        // Текст
+        echo '<div style="margin-left: 20px;">';
         echo '<h2 style="margin: 0 0 10px 0;">';
         echo $value['title'];
         Controller::CommentsCount($value['id']);
@@ -48,11 +69,92 @@ public static function AllNews($arr) {
         echo "<p style='margin: 10px 0; font-weight: bold;'>" . htmlspecialchars($value['price']) . "€/öö</p>";
         echo "<a href='news?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
         echo '</div>';
-        
+
         echo '</div>';
-        echo '<hr/>';
+
+        $i++;
     }
 }
+
+
+public static function AllNews($arr) {
+    echo ' <style>
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        padding: 15px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeSlideIn 0.5s ease forwards;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @media (min-width: 700px) {
+        .card {
+            flex-direction: row;
+        }
+    }
+
+    .card:hover {
+        transform: translateY(0) scale(1.03);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+.card-img-wrapper {
+    width: 100%;
+    max-width: 400px;
+    flex-shrink: 0;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+    @keyframes fadeSlideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    </style>';
+
+    echo '<div class="cards-container">';
+
+    $i = 0;
+    foreach ($arr as $value) {
+        $delay = $i * 0.1;
+        echo '<div class="card" style="animation-delay: '.$delay.'s;">';
+
+        // Картинка
+echo '<div class="card-img-wrapper">';
+echo '<img src="data:image/jpeg;base64,' . base64_encode($value["picture"]) . '" />';
+echo '</div>';
+
+        // Текст
+        echo '<div style="margin-left: 20px;">';
+        echo '<h2 style="margin: 0 0 10px 0;">';
+        echo $value['title'];
+        Controller::CommentsCount($value['id']);
+        echo '</h2>';
+
+        echo "<p style='margin: 10px 0; font-weight: bold;'>" . htmlspecialchars($value['price']) . "€/öö</p>";
+        echo "<a href='news?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
+        echo '</div>';
+
+        echo '</div>';
+
+        $i++;
+    }
+
+    echo '</div>';
+}
+
+
 
 
     // Метод для отображения одной новости
@@ -63,7 +165,7 @@ public static function AllNews($arr) {
         echo '</h2>';
         echo '<br>';
     
-        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($n['picture']) . '" width="400"/><br>';
+        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($n['picture']) . '" width="40%"/><br>';
         echo '<p style="font-size:25px;"><strong>' . $n['price'] . '  &euro;/öö </strong> </p>';
         echo "<p>" . $n['text'] . "</p>";
         echo "<p><strong>Aadress: </strong> " . $n['address'] . "</p>";
@@ -150,8 +252,9 @@ public static function AllNews($arr) {
     max-width: 400px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     animation: slideDown 0.4s ease;
-    /* обычная форма без flex */
+    position: relative; /* <--- добавь это */
 }
+
 
 /* Только для успешной модалки! */
 .success-content {
