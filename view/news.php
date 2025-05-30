@@ -130,12 +130,12 @@ public static function AllNews($arr) {
         $delay = $i * 0.1;
         echo '<div class="card" style="animation-delay: '.$delay.'s;">';
 
-        // Картинка
+
 echo '<div class="card-img-wrapper">';
 echo '<img src="data:image/jpeg;base64,' . base64_encode($value["picture"]) . '" />';
 echo '</div>';
 
-        // Текст
+
         echo '<div style="margin-left: 20px;">';
         echo '<h2 style="margin: 0 0 10px 0;">';
         echo $value['title'];
@@ -157,7 +157,6 @@ echo '</div>';
 
 
 
-    // Метод для отображения одной новости
     public static function ReadNews($n) {
         echo '<h2 style="margin: 0 0 10px 0; font-size:30px;">';
         echo $n['title'];
@@ -165,7 +164,7 @@ echo '</div>';
         echo '</h2>';
         echo '<br>';
     
-        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($n['picture']) . '" width="40%"/><br>';
+        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($n['picture']) . '" width="50%"/><br>';
         echo '<p style="font-size:25px;"><strong>' . $n['price'] . '  &euro;/öö </strong> </p>';
         echo "<p>" . $n['text'] . "</p>";
         echo "<p><strong>Aadress: </strong> " . $n['address'] . "</p>";
@@ -177,29 +176,29 @@ echo '</div>';
         echo '<button onclick="openModal()" class="book-btn">Broneeri</button>';
         echo '<br/>';
     
-        // Первое модальное окно (выбор дат)
+
         echo '
-        <div id="bookingModal" class="modal">
-            <div class="modal-content">
-                <span onclick="closeModal()" class="close">&times;</span>
-                <h3>Broneeri majutus</h3>
-                <form id="bookingForm">
-                    <input type="hidden" name="apartment_id" value="' . $n['id'] . '" />
-                    <label for="start_date">Alguskuupäev:</label><br>
-                    <input type="date" id="start_date" name="start_date" required><br><br>
-    
-                    <label for="end_date">Lõppkuupäev:</label><br>
-                    <input type="date" id="end_date" name="end_date" required><br><br>
-    
-                    <button type="submit" class="submit-btn">Kinnita broneering</button>
-                </form>
-            </div>
-        </div>
+<div id="bookingModal" class="modal">
+  <div class="modal-content" style="max-width: 400px; margin: 50px auto;">
+    <span onclick="closeModal()" class="close">&times;</span>
+    <h3>Broneeri majutus</h3>
+    <form id="bookingForm">
+        <input type="hidden" name="apartment_id" value="' . $n['id'] . '" />
+        <label for="start_date">Alguskuupäev:</label><br>
+        <input type="date" id="start_date" name="start_date" required><br><br>
+
+        <label for="end_date">Lõppkuupäev:</label><br>
+        <input type="date" id="end_date" name="end_date" required><br><br>
+
+        <button type="submit" class="submit-btn">Kinnita broneering</button>
+    </form>
+  </div>
+</div>
+
         ';
-    
-        // Второе модальное окно (успешное бронирование)
+
         echo '
-<div id="successModal" class="modal">
+<div id="successModal" class="modal" style="width:80%">
     <div class="modal-content success-content"> <!-- дополнительный класс -->
         <span onclick="closeSuccessModal()" class="close">&times;</span>
         <div class="check">
@@ -214,8 +213,7 @@ echo '</div>';
 
 
         ';
-    
-        // Стили для обоих модальных окон
+
         echo '
         <style>
             .book-btn {
@@ -315,8 +313,7 @@ echo '</div>';
             }
         </style>
         ';
-    
-        // Скрипты управления окнами
+
         echo '
         <script>
             function openModal() {
