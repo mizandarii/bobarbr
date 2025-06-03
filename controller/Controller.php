@@ -1,8 +1,14 @@
 <?php
+// ... other includes
+require_once __DIR__ . '/../view/entities.php'; 
+require_once __DIR__ . '/../view/comments.php';
+
+
+
 
 class Controller {
     public static function StartSite() {
-        $arr = News::getLast10News();
+        $arr = Entities::getLast10Entities();
         include_once 'view/start.php';
     }
 
@@ -11,87 +17,77 @@ class Controller {
         include_once 'view/category.php'; 
     }
 
-    public static function AllNews() {
-        $arr = News::getAllNews();
-        include_once 'view/allnews.php';
+    public static function AllEntities() {
+        $arr = Entities::getAllEntities();
+        include_once 'view/allentities.php';
     }
 
-    public static function NewsByCatID($id) {
-        $arr = News::getNewsByCategoryID($id);  // Исправлено
-        //$catName = News::getCategoryNameByID($id);
-        include_once 'view/catnews.php';
+    public static function EntitiesByCatID($id) {
+        $arr = Entities::getEntitiesByCategoryID($id);
+        include_once 'view/catentities.php';
     }
 
-    public static function NewsByID($id) {
-        $n = News::getNewsByID($id);  // Исправлено на News
-        include_once 'view/readnews.php';
+    public static function EntitiesByID($id) {
+        $n = Entities::getEntitiesByID($id);
+        include_once 'view/readentities.php';
     }
 
-public static function error404() {
-    // Вместо использования include, можно сделать редирект на страницу ошибки
-    header("HTTP/1.1 404 Not Found");
-    include_once 'view/error404.php';
-    exit();
-}
-
+    public static function error404() {
+        header("HTTP/1.1 404 Not Found");
+        include_once 'view/error404.php';
+        exit();
+    }
 
     public static function InsertComment($c, $id) {
-        Comments::InsertComment($c, $id);  // Исправлено: добавлены фигурные скобки
-        header('Location: news?id=' . $id . '#ctable');  // Исправлено: используем $id
+        Comments::InsertComment($c, $id);
+        header('Location: entities?id=' . $id . '#ctable');
     }
 
-
-
-
-    
     public static function BookApartment() {
         $userId = $_POST['user'];
         $objectId = $_POST['object'];
         $startDate = $_POST['start'];
         $endDate = $_POST['end'];
     
-        if (Booking::insertBooking($userId, $objetcId, $startDate, $endDate)) {
-            // Успех: перенаправляем обратно на новость с GET параметром success
-            header("Location: news?id=$apartmentId&booking_success=true");
+        if (Booking::insertBooking($userId, $objectId, $startDate, $endDate)) {
+            header("Location: entities?id=$objectId&booking_success=true");
             exit;
         } else {
             echo "Tekkis viga broneeringu salvestamisel.";
         }
     }
-    
 
-
-
-    // Комментарии
-    public static function Comments($newsid) {
-        $arr = Comments::getCommentByNewsID($newsid);
-        ViewComments::CommentsByNews($arr);
+    public static function Comments($entitiesId) {
+        $arr = Comments::getCommentByEntitiesID($entitiesId);
+        ViewComments::CommentsByEntitiesID($arr);
     }
 
-    public static function CommentsCount($newsid) {
-        if (isset($newsid) && !empty($newsid)) {
-            $arr = Comments::getCommentsCountByNewsID($newsid);
+    public static function CommentsCount($entitiesId) {
+
+        if (class_exists('ViewComments')) {
+    echo "Класс ViewComments найден<br>";
+} else {
+    echo "Класс ViewComments НЕ найден<br>";
+}
+
+        if (isset($entitiesId) && !empty($entitiesId)) {
+            $arr = Comments::getCommentsCountByEntitiesID($entitiesId);
             ViewComments::CommentsCount($arr);
         } else {
-            // Обработка случая, когда id не передан или пуст
-            echo "Комментарии отсутствуют.";
+            echo "Kommentaarid puuduvad.";
         }
     }
-    
 
-    // Ссылка на список комментариев
-    public static function CommentsCountWithAncor($newsid) {
-        $arr = Comments::getCommentsCountByNewsID($newsid);
-        ViewComments::CommentsCountWithAncor($arr);  // Исправлено: правильное имя класса ViewComments
+    public static function CommentsCountWithAncor($entitiesId) {
+        $arr = Comments::getCommentsCountByEntitiesID($entitiesId);
+        ViewComments::CommentsCountWithAncor($arr);
     }
 
-    // Регистрация
     public function registerForm() {
         include_once('view/formRegister.php');
     }
 
     public function registerUser() {
-        //$result = Register::registerUser();
         $register = new Register();
         $result = $register->registerUser();
         include_once('view/answerRegister.php');

@@ -1,4 +1,7 @@
-<?php ob_start() ?>
+<?php ob_start() 
+require_once __DIR__ . '/../langLoader.php';
+
+?>
 <h2>404 ошибка </h2>
 <article>
     <h3>404 ошибка - что это такое?<?php ob_start() ?>

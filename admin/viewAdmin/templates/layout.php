@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../langLoader.php';
+
+?>
 <html>
 <head>
     <title>Dashboard</title>
@@ -36,7 +40,7 @@
             echo ' &#187 <a href="./">Start admin</a>';
             echo ' &#187 <a href="categoryAdmin">Rental Categories</a>';
             
-            echo ' &#187 <a href="newsAdmin">Rental List</a>';
+            echo ' &#187 <a href="entitiesAdmin">Rental List</a>';
 
             echo ' </h4>';
         }else{

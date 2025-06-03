@@ -1,9 +1,10 @@
 <?php 
+require_once __DIR__ . '/../langLoader.php';
+
 class controllerAdmin{
     public static function formLoginSite(){
         include_once('viewAdmin/formLogin.php');
     }
-    //admin auth form
     public static function loginAction(){
         $logIn = modelAdmin::userAuthentication();
         if(isset($logIn) and $logIn == true){

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 ob_start();
 if (isset($result)) {
     if ($result[0] == true) {

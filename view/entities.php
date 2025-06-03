@@ -1,7 +1,7 @@
 <?php
-class ViewNews {
+class ViewEntities {
     // Метод для отображения новостей по категориям
-public static function NewsByCategory($arr) {
+public static function EntitiesByCategory($arr) {
     echo '
     <style>
     .card {
@@ -67,7 +67,7 @@ echo '</div>';
         echo '</h2>';
 
         echo "<p style='margin: 10px 0; font-weight: bold;'>" . htmlspecialchars($value['price']) . "€/öö</p>";
-        echo "<a href='news?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
+        echo "<a href='entities?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
         echo '</div>';
 
         echo '</div>';
@@ -77,7 +77,7 @@ echo '</div>';
 }
 
 
-public static function AllNews($arr) {
+public static function AllEntities($arr) {
     echo ' <style>
     .card {
         display: flex;
@@ -143,7 +143,7 @@ echo '</div>';
         echo '</h2>';
 
         echo "<p style='margin: 10px 0; font-weight: bold;'>" . htmlspecialchars($value['price']) . "€/öö</p>";
-        echo "<a href='news?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
+        echo "<a href='entities?id=" . urlencode($value['id']) . "' style='color: #007BFF; text-decoration: none;'>uuri lähemalt</a>";
         echo '</div>';
 
         echo '</div>';
@@ -157,7 +157,7 @@ echo '</div>';
 
 
 
-    public static function ReadNews($n) {
+    public static function ReadEntities($n) {
         echo '<h2 style="margin: 0 0 10px 0; font-size:30px;">';
         echo $n['title'];
         Controller::CommentsCount($n['id']);

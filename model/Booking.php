@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 Class Booking{
     
 public static function insertBooking($user, $object, $start, $end) {

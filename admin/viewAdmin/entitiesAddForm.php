@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php ob_start(); 
+require_once __DIR__ . '/../langLoader.php';
+
+?>
 
 <div class="container" style="min-height:400px;">
 <div class="col-md-11">
@@ -10,7 +13,7 @@
 
             ?>
             <div class="alert alert-info">
-                <strong>Запись добавлена.</strong><a href="newsAdmin">Список объектов</a>
+                <strong>Запись добавлена.</strong><a href="entitiesAdmin">Список объектов</a>
             </div>
             <?php
         }
@@ -18,14 +21,14 @@
         {
             ?>
             <div class="alert alert-warning">
-                <strong>Ошибка добавления записи!</strong><a href="newsAdmin">Список объектов</a>
+                <strong>Ошибка добавления записи!</strong><a href="entitiesAdmin">Список объектов</a>
             </div>
             <?php
         }
     }
     else{
         ?>
-        <form method="POST" action="newsAddResult" enctype="multipart/form-data">
+        <form method="POST" action="entititesAddResult" enctype="multipart/form-data">
             <table class="table table-bordered">
             <tr>
                 <td>Rental title</td>
@@ -86,7 +89,7 @@
                     <button type="submit" class="btn btn-primary" name="save">
                         <span class="glyphicon glyphicon-plus"></span>Сохранить
                     </button>
-                    <a href="newsAdmin" class="btn btn-large btn-success">
+                    <a href="entitiesAdmin" class="btn btn-large btn-success">
                         <i class="glyphicon glyphicon-backward"></i>&nbsp;Назад к списк</a>
                 </td>
             </tr>

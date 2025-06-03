@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 class Register{
     public function registerUser(){
         $controll=array(0=>false, 1=>'error');

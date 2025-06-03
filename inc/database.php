@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
 
 class database {
     private $conn;

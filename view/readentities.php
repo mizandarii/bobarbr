@@ -1,11 +1,13 @@
 <?php
 ob_start();
+require_once __DIR__ . '/../langLoader.php';
+
 ?>
 
 <br>
 
 <?php
-ViewNews::ReadNews($n);
+ViewEntities::ReadEntities($n);
 
 echo "<br>";
 Controller::Comments($_GET['id']);

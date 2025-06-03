@@ -1,4 +1,7 @@
-<?php ob_start() ?>
+<?php ob_start() 
+require_once __DIR__ . '/../langLoader.php';
+
+?>
 <article>
     <div id="main" class="container">
         <h3>Админ панель</h3>

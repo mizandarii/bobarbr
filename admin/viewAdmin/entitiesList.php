@@ -1,16 +1,19 @@
-<?php ob_start() ?>
+<?php ob_start() 
+require_once __DIR__ . '/../langLoader.php';
 
-<h2>News list</h2>
+?>
+
+<h2>Objects list</h2>
 
 <div class="container" style="min-height:400px;">
     <div style="margin: 20px;">
-        <a class="btn btn-primary" href="newsAdd" role="button">Добвавить новость</a>
+        <a class="btn btn-primary" href="entitiesAdd" role="button">Добавить объект</a>
     </div>
     <div class="col-md-11">
         <table class="table table-bordered table-responsive">
             <tr>
                 <th width="10%">ID</th>
-                <th width="70%">Header News</th>
+                <th width="70%">Header Object</th>
                 <th width="30%"></th>
             </tr>
 
@@ -24,8 +27,8 @@
                     echo '<br><b>Author: </b><i>'.$row['username'].'</i>';
                     echo '</td>';
                     echo '<td>
-                        <a href="newsEdit?id='.$row['id'].'">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                        <a href="newsDel?id='.$row['id'].'">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                        <a href="entitiesEdit?id='.$row['id'].'">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        <a href="entitiesDel?id='.$row['id'].'">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
                         </td> ';
                     echo '</tr>';
             }

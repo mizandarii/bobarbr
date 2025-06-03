@@ -1,6 +1,8 @@
 <?php 
-class modelAdminNews{
-    public static function getNewsList(){
+require_once __DIR__ . '/../langLoader.php';
+
+class modelAdminEntities{
+    public static function getEntitiesList(){
         $query = "SELECT rentals.*, category.name, users.username 
         FROM rentals, category, users 
         WHERE rentals.category_id = category.id 
@@ -12,7 +14,7 @@ class modelAdminNews{
     }
 
 
-    public static function getNewsAdd(){
+    public static function getEntitiesAdd(){
         $test=false;
         if(isset($_POST['save'])){
             if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])){
@@ -41,7 +43,7 @@ class modelAdminNews{
     }
 
 
-    public static function getNewsDetail($id){
+    public static function getEntitiesDetail($id){
         $query = "SELECT rentals.*, category.name, users.username from rentals, category, users
         where rentals.category_id = category.id and rentals.user_id = users.id and rentals.id = ".$id;
         $db = new Database();
@@ -49,7 +51,7 @@ class modelAdminNews{
         return $arr;
     }
 
-    public static function getNewsEdit($id){
+    public static function getEntitiesEdit($id){
         $test=false;
         if(isset($_POST['save'])){
             if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])){
@@ -89,7 +91,7 @@ class modelAdminNews{
         return $test;
     }
 
-    public static function getNewsDelete($id){
+    public static function getEntitiesDelete($id){
         $test=false;
         if(isset($_POST['save'])){
             $sql="delete from `rentals` where `rentals`.`id` = ".$id;

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 //вычислить маршрут из адресной строки
 $host = explode('?', $_SERVER['REQUEST_URI'])[0];
 $num = substr_count($host, '/');
@@ -9,13 +11,13 @@ if($path == '' OR $path == 'index' OR $path == 'index.php'){
 }
 
 elseif($path == 'all') {
-    $response = Controller::AllNews();
+    $response = Controller::AllEntities();
 }
 elseif($path == 'category' and isset ($_GET['id'])){
-    $response = Controller::NewsByCatID($_GET['id']);
+    $response = Controller::EntitiesByCatID($_GET['id']);
 }
-elseif($path == 'news' and isset ($_GET['id'])){
-    $response = Controller::NewsByID($_GET['id']);
+elseif($path == 'entities' and isset ($_GET['id'])){
+    $response = Controller::EntitiesByID($_GET['id']);
 }
 
 elseif($path == 'insertcomment' and isset($_GET['comment'], $_GET['id']))

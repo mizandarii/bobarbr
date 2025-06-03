@@ -1,4 +1,6 @@
 <?php 
+require_once __DIR__ . '/../langLoader.php';
+
 
 echo "<li class='submenuunit'><a href='all'>ALL</a></li>";
 foreach($arr as $value){

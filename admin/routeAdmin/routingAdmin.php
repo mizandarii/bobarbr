@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 $host = explode('?', $_SERVER['REQUEST_URI'])[0];
 $num = substr_count($host, '/');
 $path = explode('/', $host)[$num];
@@ -19,30 +21,30 @@ elseif($path=='logout')
     $response = controllerAdmin::logoutAction();
 }
 
-elseif($path == 'newsAdmin'){
-    $response=controllerAdminNews::NewsList();
+elseif($path == 'entitiesAdmin'){
+    $response=controllerAdminEntities::EntitiesList();
 }
 
-elseif($path=='newsAdd'){
-    $response=controllerAdminNews::newsAddForm();
+elseif($path=='entitiesAdd'){
+    $response=controllerAdminEntities::entitiesAddForm();
 }
 
-elseif($path == 'newsAddResult'){
-    $response = controllerAdminNews::newsAddResult();
+elseif($path == 'entitiesAddResult'){
+    $response = controllerAdminEntities::entitiesAddResult();
 }
 
-elseif($path=='newsEdit' && isset($_GET['id'])){
-    $response=controllerAdminNews::newsEditForm($_GET['id']);
+elseif($path=='entitiesEdit' && isset($_GET['id'])){
+    $response=controllerAdminEntities::entitiesEditForm($_GET['id']);
 }
 
-elseif($path == 'newsEditResults' && isset($_GET['id'])){
-    $response=controllerAdminNews::newsEditResult($_GET['id']);
+elseif($path == 'entitiesEditResults' && isset($_GET['id'])){
+    $response=controllerAdminEntities::entitiesEditResult($_GET['id']);
 }
-elseif($path =='newsDel' && isset($_GET['id'])){
-    $response=controllerAdminNews::newsDeleteForm($_GET['id']);
+elseif($path =='entitiesDel' && isset($_GET['id'])){
+    $response=controllerAdminEntities::entitiesDeleteForm($_GET['id']);
 }
-elseif($path=="newsDelResult" && isset($_GET['id'])){
-    $response = controllerAdminNews::newsDeleteResult($_GET['id']);
+elseif($path=="entitiesDelResult" && isset($_GET['id'])){
+    $response = controllerAdminEntities::entitiesDeleteResult($_GET['id']);
 }
 else{
     //page does not exist

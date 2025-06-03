@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 class modelAdmin{
     //admin auth
     public static function userAuthentication()

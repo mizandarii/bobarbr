@@ -1,7 +1,11 @@
 <?php
+require_once __DIR__ . '/../langLoader.php';
+
 if (isset($_SESSION['userId'])){
     header('Location: login');
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
