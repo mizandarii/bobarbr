@@ -1,6 +1,4 @@
 <?php ob_start(); 
-require_once __DIR__ . '/../langLoader.php';
-
 ?>
 
 <div class="container" style="min-height:400px;">

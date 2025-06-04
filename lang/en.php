@@ -19,6 +19,10 @@ return [
   'country' => 'Country:',
   'size_m2' => 'Size (m²):',
   'floor' => 'Floor:',
-  'night'=>'night'
+  'night'=>'night', 
+  'name'=> 'Name',
+  'email'=>'E-Mail Address',
+  'password'=>'Password',
+  'password-confirm'=>'Confirm Password'
 
 ];

@@ -1,25 +1,19 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+session_start(); // не комментируйте это
 
-// дальше твой код...
-
-require_once __DIR__ . '/langLoader.php'; // ✅ Load language
+require_once 'langloader.php'; // Только здесь — один раз!
 
 include_once 'inc/database.php';
-require_once 'model/Category.php';
-require_once 'model/Entities.php';
-require_once 'model/Comments.php';
-require_once 'model/Register.php';
-require_once 'model/Booking.php';
-require_once 'controller/Controller.php';
+require 'model/Category.php';
+require 'model/Entities.php';
+require 'model/Comments.php';
+require 'model/Register.php';
+require 'model/Booking.php';
 
-// 🔁 Execute routing/controller first to generate $content
-ob_start();
+include_once 'controller/Controller.php';
+
+// Сначала routing (он должен установить $content)
 include_once 'route/routing.php';
-$content = ob_get_clean();
 
-// 📦 Then pass the content into the layout (after it's fully built)
-require_once __DIR__ . '/view/layout.php'; 
-?>
+// Layout рендерит на основе $content и $lang
+require_once 'view/layout.php';

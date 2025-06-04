@@ -4,7 +4,7 @@ return [
     'categories' => 'Kategooriad',
     'info' => 'Info',
     'homepage' => 'Stardileht',
-    'register' => 'Registreeri',
+    'register' => 'Registreeru',
     'search' => 'Otsi',
     'content_missing' => 'Sisu puudub',
   'book' => 'Broneeri',
@@ -19,6 +19,10 @@ return [
   'country' => 'Riik:',
   'size_m2' => 'Suurus (m²):',
   'floor' => 'Korrus:',
-  'night'=>'öö'
+  'night'=>'öö',
+    'name'=> 'Nimi',
+  'email'=>'E-post',
+  'password'=>'Parool',
+  'password-confirm'=>'Kinnita parool'
 ];
 

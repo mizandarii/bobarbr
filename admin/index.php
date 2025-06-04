@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../langLoader.php';
 
 
     require_once '../inc/database.php';

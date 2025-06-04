@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../langLoader.php';
 
 $host = explode('?', $_SERVER['REQUEST_URI'])[0];
 $num = substr_count($host, '/');

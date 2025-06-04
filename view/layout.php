@@ -1,8 +1,9 @@
 <?php
-
+//require_once __DIR__ . '/../langloader.php';
 //echo "<pre>LANG: $langCode\n"; print_r($lang); echo "</pre>";
-
 //echo 'LANG: ' . $_SESSION['lang'];
+
+
 
 ?>
 <!DOCTYPE html>

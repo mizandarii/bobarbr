@@ -1,6 +1,5 @@
 <?php
 ob_start();
-require_once __DIR__ . '/../langLoader.php';
 
 ?>
 <h1>TOP 3 RENTALS</h1>

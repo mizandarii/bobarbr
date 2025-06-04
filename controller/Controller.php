@@ -1,7 +1,7 @@
 <?php
 // ... other includes
-require_once __DIR__ . '/../view/entities.php'; 
-require_once __DIR__ . '/../view/comments.php';
+//require_once __DIR__ . '/../view/entities.php'; 
+//require_once __DIR__ . '/../view/comments.php';
 
 
 
@@ -64,12 +64,6 @@ class Controller {
 
     public static function CommentsCount($entitiesId) {
 
-        if (class_exists('ViewComments')) {
-    echo "Класс ViewComments найден<br>";
-} else {
-    echo "Класс ViewComments НЕ найден<br>";
-}
-
         if (isset($entitiesId) && !empty($entitiesId)) {
             $arr = Comments::getCommentsCountByEntitiesID($entitiesId);
             ViewComments::CommentsCount($arr);
@@ -83,9 +77,13 @@ class Controller {
         ViewComments::CommentsCountWithAncor($arr);
     }
 
-    public function registerForm() {
-        include_once('view/formRegister.php');
-    }
+public function registerForm() {
+    ob_start();
+    include 'view/formRegister.php';
+    return ob_get_clean(); // Возвращаем HTML как $content
+}
+
+
 
     public function registerUser() {
         $register = new Register();
@@ -94,3 +92,4 @@ class Controller {
     }
 }
 ?>
+ 
